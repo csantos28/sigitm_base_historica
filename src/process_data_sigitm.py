@@ -50,9 +50,6 @@ class ExcelFileHandler:
     }
 
     PREFIX = "CONSULTA_TLP_PCP_CS"
-    CSV_SIZE_THRESHOLD = 10 # Tamanho máximo de arquivo antes de usar chunks (em MB)
-    CHUNK_SIZE = 10000 # Número máximo de linhas por chunk
-    AVG_LINE_SIZE_KB = 1 # Tamanho estimado por linha (em KB) para cálculo aproximado
 
     DATE_COLUMNS = ("data_criacao", "data_de_baixa", "data_encerramento")
     DATETIME_FORMAT = "%d%m%y_%H%M"
@@ -173,7 +170,7 @@ class ExcelFileHandler:
         except Exception as e:
             return FileProcessingResult(success=False, message=f"Erro ao processar arquivo: {str(e)}") 
 
-    def process_most_recent_file(self, file_path) -> FileProcessingResult:
+    def process_most_recent_file(self, file_path: Path) -> FileProcessingResult:
         """Processa o arquivo mais recente encontrado.
         
         Returns:
@@ -190,7 +187,7 @@ class ExcelFileHandler:
             self.logger.error(f"Erro ao processar arquivo mais recente: {e}")
             return FileProcessingResult(success=False, message=f"Erro ao processar arquivo mais recente: {str(e)}")
 
-    def delete_most_recent_file(self, file_path) -> bool:
+    def delete_most_recent_file(self, file_path: Path) -> bool:
         """Remove o arquivo mais recente encontrado.
         
         Returns:

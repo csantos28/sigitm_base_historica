@@ -2,7 +2,7 @@ import asyncio
 import time
 from datetime import datetime, timedelta
 from typing import Optional, Tuple
-from playwright.async_api import async_playwright, Page, Browser, Locator, BrowserContext
+from playwright.async_api import async_playwright, Page, Playwright, Locator, BrowserContext
 from platformdirs import user_downloads_dir
 from pathlib import Path
 from twocaptcha import TwoCaptcha
@@ -41,7 +41,7 @@ class SIGITMAutomation:
         self.password = password
         self.api_key_2captcha = chave_api
         self.logger = SystemLogger.configure_logger('SIGITMAutomation')
-        self.browser: Browser = None
+        self.playwright_engine: Playwright = None
         self.context: BrowserContext = None
         self.page: Page = None
         self.system_page: Page = None
