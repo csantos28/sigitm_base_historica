@@ -132,7 +132,10 @@ class ExcelFileHandler:
                 except Exception as e:
                     self.logger.warning(f"⚠️ Erro no processamento da coluna {col}: {e}")
 
+        # Não permite que dados criados ou fechados hoje entrem na carga
         condicao_historico = (df['data_criacao'] < dthr_corte) & (df['data_de_baixa'] < dthr_corte)
+        
+        # Pega os tickets que ainda estão abertos
         condicao_abertos = (df['data_criacao'] < dthr_corte) & (df['data_de_baixa'].isna())            
 
         df = df[condicao_historico | condicao_abertos].copy()
