@@ -91,7 +91,6 @@ O processo é executado de forma robusta e resiliente, com tratamento de erros, 
 - Limpeza de dados:
   - Tratamento de valores nulos (NaN, NaT, "None", "")
   - Normalização de IDs (inteiros seguros)
-  - Remoção de colunas desnecessárias (VTA PK)
 - Validação de tipos e consistência
 
 
