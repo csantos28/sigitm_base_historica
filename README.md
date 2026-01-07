@@ -118,7 +118,7 @@ O processo é executado de forma robusta e resiliente, com tratamento de erros, 
 - Logs detalhados de todas as operações
 
 
-### 6. `syslog.py` - **Sistema de Logs**
+### 6. `log_config.py` - **Sistema de Logs**
 
 **Papel**: Centraliza e padroniza o logging em toda a aplicação.
 
