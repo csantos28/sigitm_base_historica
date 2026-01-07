@@ -86,7 +86,7 @@ O processo é executado de forma robusta e resiliente, com tratamento de erros, 
 - Mapeamento de colunas para nomes padronizados (snake_case)
 - Tratamento de datas:
   - Conversão para formato brasileiro (DD/MM/YYYY)
-  - Filtro por data de corte (encerrados até ontem 23:59:59)
+  - Filtro por data de corte (pré baixadas até ontem 23:59:59)
   - Normalização para fuso horário BRT
 - Limpeza de dados:
   - Tratamento de valores nulos (NaN, NaT, "None", "")
@@ -143,7 +143,7 @@ O processo é executado de forma robusta e resiliente, com tratamento de erros, 
 3.  Fase 2 - Extração
     - Login no SIGITM (com CAPTCHA)
     - Navegação até consulta específica
-    - Ajuste de data de encerramento
+    - Ajuste de data de pré baixa
     - Execução da consulta
     - Exportação para Excel
 
